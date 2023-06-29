@@ -19,6 +19,6 @@ regions=$(echo $regionslist | jq -r '.data[] | ."name"')
 for region in $regions; do echo "Enumerating DRG in region" $region &&  ./listdrgs.sh $region ; done
 cat drgrtrulesregion-*.csv >> drgrtrulesglobal.csv
 rm -f drgrtrulesregion-*.csv
-echo drgrtrulesglobal.csv
-pwd
+filepath=$(pwd)
+echo Report : $filepath/drgrtrulesglobal.csv
 ```
